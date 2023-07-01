@@ -1,33 +1,22 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	// your code goes here
-	int t;
-	cin >> t;
-	while(t--)
-	{
-	    int a[5];
-	    int count=0;
-	    for(int i=0;i<5;i++)
-	    cin >> a[i];
-	    for(int i=0 ;i<5;i++)
-	    {
-	        if(a[i]==1)
-	        count++;
+	int n, i, a;
+	cin>>n; //taking number of competitiors as test cases
+	while(n--) {
+	    int one=0; //initializing the problem solved counter
+	    for (i=0; i<5; i++) {
+	        cin>>a;
+	        if (a==1) one++; //if it is 1, it is taken as solved
 	    }
-	    if(count == 0)
-	    cout << "Beginner" << endl;
-	    else if(count ==1)
-	    cout <<"Junior Developer" << endl;
-	    else if(count == 2)
-	    cout << "Middle Developer" << endl;
-	    else if(count == 3)
-	    cout <<"Senior Developer" << endl;
-	    else if(count ==4)
-	    cout<<"Hacker"<<endl;
-	    else
-	    cout<<"Jeff Dean"<<endl;
+	    //as per number of problems solved, contestant is classified 
+	    if (one==0) cout<<"Beginner";
+	    else if (one==1) cout<<"Junior Developer";
+	    else if (one==2) cout<<"Middle Developer";
+	    else if (one==3) cout<<"Senior Developer";
+	    else if (one==4) cout<<"Hacker";
+	    else cout<<"Jeff Dean";
+	    cout<<endl;
 	}
 	return 0;
 }
